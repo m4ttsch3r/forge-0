@@ -45,6 +45,7 @@ status: active
 - Default workflow: task branches (`task/<kebab-slug>`), squash-merge to `main`, delete branch after merge
 - Commit messages follow conventional commits style
 - Default model allocation applies (Sonnet for complex, Haiku for simple)
+- **Think in Code** — agents write analysis scripts rather than reading raw data into context; see `documentation/think-in-code-agentic.md`
 
 ### Dual-documentation convention (applies to ALL work in Forge)
 Every significant piece of work must produce two documentation artifacts:

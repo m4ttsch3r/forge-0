@@ -62,6 +62,47 @@ Project-specific context lives in `.github/skills/`. Load the relevant skill(s) 
 
 ---
 
+# Think in Code
+
+Agents MUST generate code to analyse data — never read raw data into context.
+
+> **Rule**: When you need to learn something from data (files, logs, API responses), write a script that extracts and prints only the answer. One script replaces ten tool calls and saves ~100× context.
+
+## When it applies
+
+- **File analysis** — counting things, finding patterns, summarising structure
+- **Log inspection** — searching for errors, extracting metrics, spotting anomalies
+- **Data counting** — tallies, statistics, inventory reports
+- **API response processing** — filtering, aggregating, extracting fields
+
+## How to run the script
+
+| Context mode available? | Approach |
+|------------------------|----------|
+| Yes | Use `ctx_execute` — runs the script, returns only stdout |
+| No | Write to a temp script file, run with `python`, delete after |
+
+## Decision table
+
+| Instead of | Do this |
+|-----------|---------|
+| Reading 20 log files to find errors | Write a Python script: search logs, print summary |
+| Fetching a webpage and reading it | `ctx_fetch_and_index` → `ctx_search "relevant term"` |
+| Listing all sub-projects and their sizes | Write a script that walks `pathlib.Path` and prints a summary |
+| Counting functions across files | Write a script that greps and counts, prints the number |
+
+## Rules
+
+1. Scripts print **only the result** — never the raw input data
+2. Use `pathlib.Path` — no hardcoded path strings
+3. Python is the preferred language (matches Forge's stack)
+4. Keep scripts self-contained — no imports beyond stdlib unless already installed
+5. Delete temp script files after use
+
+Full spec: `documentation/think-in-code-agentic.md` · Rationale: `documentation/think-in-code-architect.md`
+
+---
+
 # Agent roles quick reference
 
 | Agent | Role | Closes issues? |

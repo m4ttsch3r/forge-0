@@ -44,6 +44,25 @@ Check `tdd_strength` in `project-context/SKILL.md` before any implementation:
 6. Mark resolved issues `status: ready-for-qa` (via `gh issue edit {N} --add-label "status: ready-for-qa"`)
 7. Post an implementation summary comment on each resolved issue
 
+## Think in Code — investigation planning
+
+When breaking down investigation tasks for `devops-executor`, **always favour script-based analysis** over raw file reads.
+
+Frame executor tasks as:
+- ✅ "Write a script that finds all functions named `process_*` across the codebase and prints the count"
+- ✅ "Write a script that walks `pathlib.Path('.')` and prints sub-project names with their `requirements.txt` dependency count"
+- ❌ "Read all files in `src/` and count the functions"
+- ❌ "List all sub-projects and read their README files"
+
+**When asking executor to investigate**, say "write a script that finds X" — not "read all files in Y".
+
+Investigation plans should specify:
+1. What the script should find/compute
+2. What the script should print (result only, not raw data)
+3. Where to run it (repo root, sub-project root, etc.)
+
+Full spec: `documentation/think-in-code-agentic.md`
+
 ## Skills maintenance
 
 - **New technology encountered** → propose a new skill in `.github/skills/<name>/SKILL.md`
