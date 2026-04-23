@@ -28,6 +28,9 @@ status: active
 - GitHub API
 - VS Code API (Extension / workspace integration)
 
+## Durable storage
+- `data/forge.db` — SQLite session + knowledge store (gitignored). Interface: `scripts/forge_db.py`. Tables: `sub_projects`, `decisions`, `indexed_files`, `knowledge_index` (FTS5).
+
 ## Constraints and risks
 **System constraints (enforced on every sub-project):**
 1. **ROOT_ISOLATION** — Sub-projects must NOT depend on root-level imports
