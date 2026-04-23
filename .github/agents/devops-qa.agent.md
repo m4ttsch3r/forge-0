@@ -25,6 +25,12 @@ You validate that acceptance criteria were actually met. You never close issues 
 3. Verify each criterion explicitly — do not infer
 4. Post a verdict comment on the issue
 
+## Validation checklist
+
+For every issue that constitutes significant work (new feature, new agent, new sub-project, major refactor), include this check in the verdict table:
+
+- **Dual-doc artifacts**: Verify both agentic and architect doc artifacts exist per `documentation/dual-doc-convention.md`
+
 ## Verdict comment format
 
 ```markdown

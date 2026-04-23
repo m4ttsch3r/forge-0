@@ -46,6 +46,18 @@ status: active
 - Commit messages follow conventional commits style
 - Default model allocation applies (Sonnet for complex, Haiku for simple)
 
+### Dual-documentation convention (applies to ALL work in Forge)
+Every significant piece of work must produce two documentation artifacts:
+
+| Version | Audience | Content |
+|---------|----------|---------|
+| **Agentic / general-users** | Anyone using Forge or its sub-projects | What was built, how to use it, what changed — standard docs |
+| **Human architect** | A human reviewing or extending the agentic system | How and why agents made decisions — reasoning, tradeoffs, agent choreography |
+
+Both versions are required. Label doc files with `-agentic` and `-architect` suffixes (e.g., `setup-agentic.md` / `setup-architect.md`) or use H2 sections within the same file.
+
+Full spec: `documentation/dual-doc-convention.md`
+
 ## Model preferences
 default — Sonnet for complex/architectural work, Haiku for simple/mechanical tasks
 
