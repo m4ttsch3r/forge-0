@@ -5,5 +5,10 @@
       "args": ["-y", "context-mode-mcp@latest"],
       "env": {}
     }
+  },
+  "servers": {
+    "context-mode": {
+      "command": "context-mode"
+    }
   }
 }

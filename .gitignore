@@ -10,6 +10,9 @@ server-keys/
 # Copilot session state
 .copilot/session-state/
 
+# context-mode local SQLite store
+.context-mode/
+
 # OS files
 .DS_Store
 Thumbs.db

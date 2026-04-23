@@ -174,6 +174,14 @@ Use this checklist when setting up Forge (or a Forge-derived project) from scrat
 - `gh` CLI installed and authenticated (`gh auth login`)
 - A GitHub personal access token with `repo` and `workflow` scopes (for label seeding)
 - GitHub Copilot subscription
+- **Node.js 18+** — required for the context-mode MCP server
+  - **Windows**: `winget install OpenJS.NodeJS.LTS`
+  - **Linux/macOS**: use `nvm` (`nvm install --lts`) or your system package manager
+- **context-mode** global install (one-time):
+  ```bash
+  npm install -g context-mode
+  ```
+  Verify with: `context-mode --version` — should output the installed version (e.g. `v1.0.89`)
 
 ### Steps
 
