@@ -1,0 +1,24 @@
+# Credentials and secrets
+.mcp.json
+*.pem
+*.key
+server-keys/
+.env
+.env.*
+!.env.example
+
+# Copilot session state
+.copilot/session-state/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+
+# Logs
+*.log
